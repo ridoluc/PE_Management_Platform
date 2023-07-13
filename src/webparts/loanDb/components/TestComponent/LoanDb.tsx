@@ -14,7 +14,7 @@ export default class LoanDb extends React.Component<ILoanDbProps, {}> {
         <div className={styles.welcome}>
           <h2>Hi!</h2>
           <p>This is a test of the UI 2</p>
-          <p>main page</p>
+          <p>main page xx</p>
         </div>
       </section>
     );
