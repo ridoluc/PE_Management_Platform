@@ -4,41 +4,26 @@ import Dashboard from '../pages/dashboard/dashboard';
 import AdditionalPage from '../pages/NewPage/AdditionalPage';
 
 
-// const routes = [
-//    {
-//       path: '/',
-//       element: <Dashboard />,
-//    },
-//    {
-//       path: 'additional/:id',
-//       element: <AdditionalPage />
-
-//    }
-// ]
-
 const AppRouter: React.FC = () => {
    return (
       <MemoryRouter>
          <Routes>
-         {/* {routes.map((route, index) => (
-            <Route key={index} path={route.path} element={route.element} />
-         ))} */}
-         <Route path='/' element={<Dashboard />}>
-            {/* <Route path='additional/:pageId' element={<AdditionalPage/>}/> */}
-         </Route>
-         <Route path="/dashboard" element={<Dashboard/>}/>
 
-         <Route 
-            path="/additional/:id" 
-            
-            loader={async ({ params }) => {
+            <Route path='/' element={<Dashboard />}>
+            </Route>
+            <Route path="/dashboard" element={<Dashboard/>}/>
+
+            <Route 
+               path="/additional/:id" 
                
-                 console.log(params.id);
-               
-             }}
-            element={<AdditionalPage/>}
-      
-         />
+               loader={async ({ params }) => {
+                  
+                  console.log(params.id);
+                  
+               }}
+               element={<AdditionalPage/>}
+         
+            />
          </Routes>
       </MemoryRouter>
    );

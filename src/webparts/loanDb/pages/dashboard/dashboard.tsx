@@ -1,12 +1,20 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import styles from '../../components/AppStyle.module.scss';
+import PropertyCard from '../../components/InfoCard/PropertyCard';
+
 
 export default class Dashboard extends React.Component<{}, {}> {
   public render(): React.ReactElement<{}> {
     return (
-      <div>
-        <h2>This is the Dashboard</h2>
-        <p>Hello</p>
+      <div className={styles.WebPartContainer}>
+        <div className={styles.TitleSection}>
+          <h2>CREDO</h2>
+          <p className={styles.subtitle}>Commercial Real Estate Debt Opportunities Fund</p>
+        </div>
+        <div className={styles.InfoBox}>
+          <PropertyCard />
+        </div>
         {/* <p>This is a link to the <a href='#/additional'>additional</a> page</p> */}
         <ul>
           <li>

@@ -1,0 +1,33 @@
+.container {
+	width: 300px;
+	background-color: white;
+	padding: 15px 25px;
+	border-radius: 3px;
+
+  .cardTitle{
+			text-transform: uppercase;
+			font-size: 13px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+  }
+	.body {
+		padding-left: 10px;
+	}
+
+	.row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 2.5em;
+
+		.name {
+			text-transform: uppercase;
+			margin-right: 8px;
+			font-weight: 500;
+			font-size: 11px;
+		}
+		.value {
+			text-align: right;
+		}
+	}
+}

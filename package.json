@@ -12,7 +12,7 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "@fluentui/react": "^7.199.1",
+    "@fluentui/react": "^7.204.0",
     "@microsoft/sp-component-base": "1.17.4",
     "@microsoft/sp-core-library": "1.17.4",
     "@microsoft/sp-lodash-subset": "1.17.4",
