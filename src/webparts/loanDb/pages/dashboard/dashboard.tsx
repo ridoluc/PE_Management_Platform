@@ -22,12 +22,12 @@ const useStyles = makeStyles({
 		marginBottom: "35px",
 	},
 	PageTitle: {
-		...typographyStyles.title2,
+		...typographyStyles.title3,
 		marginBottom: "5px",
 		marginTop: "10px",
 	},
 	caption: {
-		...typographyStyles.subtitle1,
+		...typographyStyles.subtitle2,
 		color: tokens.colorNeutralForeground4,
 		marginTop: "0px",
 	},

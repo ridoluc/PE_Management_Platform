@@ -1,6 +1,8 @@
 @import '~@fluentui/react/dist/sass/References.scss';
 
-
+a{
+   text-decoration: none;
+}
 .WebPartContainer{
    background-color: #fafafa; /* Light grey color */
    /* Add other custom styles if needed */

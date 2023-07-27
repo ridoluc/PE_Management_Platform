@@ -19,8 +19,7 @@ import {
       maxWidth: "100%",
       minHeight: "fit-content",
       height: "100%",
-      ...shorthands.borderRadius(tokens.borderRadiusSmall)
-      
+      ...shorthands.borderRadius(tokens.borderRadiusSmall),
    },
  });
  
