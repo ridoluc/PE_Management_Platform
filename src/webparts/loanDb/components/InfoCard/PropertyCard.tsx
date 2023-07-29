@@ -1,32 +1,25 @@
 import * as React from 'react';
 import styles from './PropertyCard.module.scss'; // Import the SCSS styles
 
+interface Line {
+  name: string;
+  value: string;
+}
 
-const PropertyCard: React.FC = () => {
+interface PropertyCardProps {
+  lines: Line[];
+}
 
+const PropertyCard: React.FC<PropertyCardProps> = ({ lines }) => {
   return (
-      <div className={styles.body }>
-      <div className={styles.row}>
-        <span className={styles.name}>property 1</span>
-        <span className={styles.value}>value 1</span>
-      </div>
-      <div className={styles.row}>
-        <span className={styles.name}>property 2</span>
-        <span className={styles.value}>value 2</span>
-      </div>
-      <div className={styles.row}>
-        <span className={styles.name}>property 3</span>
-        <span className={styles.value}>value 3</span>
-      </div>
-      <div className={styles.row}>
-        <span className={styles.name}>property 4</span>
-        <span className={styles.value}>value 4</span>
-      </div>
-      <div className={styles.row}>
-        <span className={styles.name}>property 5</span>
-        <span className={styles.value}>value 5</span>
-      </div>
-      </div>
+    <div className={styles.body}>
+      {lines.map((line, index) => (
+        <div className={styles.row} key={index}>
+          <span className={styles.name}>{line.name}</span>
+          <span className={styles.value}>{line.value}</span>
+        </div>
+      ))}
+    </div>
   );
 };
 

@@ -9,7 +9,8 @@ import {
 	makeStyles,
 	tokens,
 } from "@fluentui/react-components";
-import {Link as LinkRouter} from "react-router-dom"
+import { Link as LinkRouter } from "react-router-dom";
+import {Project} from "./getProjects"
 
 const useStyles = makeStyles({
 	table_header: {
@@ -28,15 +29,18 @@ const useStyles = makeStyles({
 		color: tokens.colorPaletteDarkOrangeForeground3,
 	},
 
-  table:{
-    fontSize: "12px",
-
-  },
-  link:{
-    textDecorationLine:"none",
-    color: tokens.colorBrandForegroundLink
-  }
+	table: {
+		fontSize: "12px",
+	},
+	link: {
+		textDecorationLine: "none",
+		color: tokens.colorBrandForegroundLink,
+	},
 });
+ 
+ interface ProjectsProps {
+	projectsList: Project[];
+ }
 
 const formatNumberInMillions = (number: number): string => {
 	const million = 1000000;
@@ -45,35 +49,24 @@ const formatNumberInMillions = (number: number): string => {
 	return `${formattedNumber}M`;
 };
 
-const items = [
-	{
-		ID: "1",
-		projectName: "Project 1",
-		loanType: "senior",
-		jurisdiction: "UK",
-		maxAmount: 10000000,
-		maturity: "31/12/2025",
-		interestRate: { margin: 4.5, base: "3M" },
-	},
-	{
-		ID: "2",
-		projectName: "Other Project",
-		loanType: "junior",
-		jurisdiction: "Spain",
-		maxAmount: 35000000,
-		maturity: "31/03/2027",
-		interestRate: { margin: 4.0, base: "3M" },
-	},
-	{
-		ID: "2",
-		projectName: "Third",
-		loanType: "mezzanine",
-		jurisdiction: "France",
-		maxAmount: 17400000,
-		maturity: "13/07/2023",
-		interestRate: { margin: 3.7, base: "6M" },
-	},
-];
+
+const formatDateToDDMMYYYY = (dateString:string) :string =>{
+
+	function padStart(str:string, targetLength:number, padString:string) {
+		str = String(str);
+		while (str.length < targetLength) {
+		  str = padString + str;
+		}
+		return str;
+	 }
+
+	const date = new Date(dateString);
+	const day = padStart(date.getDate().toString(), 2, '0');
+	const month = padStart((date.getMonth() + 1).toString(), 2, '0'); // Months are zero-indexed, so add 1
+	const year = date.getFullYear();
+ 
+	return `${day}-${month}-${year}`;
+ }
 
 const columns = [
 	{ columnKey: "projectName", label: "Project Name" },
@@ -84,15 +77,29 @@ const columns = [
 	{ columnKey: "interestRate", label: "Interest Rate" },
 ];
 
-export const ProjectsTable = () => {
+export const ProjectsTable: React.FC<ProjectsProps> = ({projectsList})  => {
 	const styles = useStyles();
 
-	const loanTypeBadge = (type: string) => {
-		if (type === "junior") return <Badge  appearance="tint" size="small" color="severe">j</Badge>;
-		else if (type === "mezzanine") return <Badge  appearance="tint" size="small" color="warning">m</Badge>;
-		else return <Badge appearance="tint" size="small" color="brand">s</Badge>;
-	};
-
+	// const loanTypeBadge = (type: string) => {
+	// 	if (type === "junior")
+	// 		return (
+	// 			<Badge appearance="tint" size="small" color="severe">
+	// 				j
+	// 			</Badge>
+	// 		);
+	// 	else if (type === "mezzanine")
+	// 		return (
+	// 			<Badge appearance="tint" size="small" color="warning">
+	// 				m
+	// 			</Badge>
+	// 		);
+	// 	else
+	// 		return (
+	// 			<Badge appearance="tint" size="small" color="brand">
+	// 				s
+	// 			</Badge>
+	// 		);
+	// };
 
 	return (
 		<Table size="small" arial-label="Projects Table">
@@ -109,39 +116,37 @@ export const ProjectsTable = () => {
 				</TableRow>
 			</TableHeader>
 			<TableBody className={styles.table}>
-				{items.map((item) => (
-					<TableRow key={item.ID}>
+				{projectsList.map((item) => (
+					<TableRow key={item.Id}>
 						<TableCell>
-              <LinkRouter to="/additional/2" className={styles.link}>
-								{item.projectName}
-              </LinkRouter>
-
+							<LinkRouter to={"/project/"+item.Id} className={styles.link}>
+								{item.Title}
+							</LinkRouter>
 						</TableCell>
 						<TableCell>
-
-								{item.loanType+' '} 
-                {loanTypeBadge(item.loanType)}
+							{item.Amount + " "}
+							{/* {loanTypeBadge(item.Amount)} */}
 						</TableCell>
-						<TableCell>{item.jurisdiction}</TableCell>
+						<TableCell>{item.Country}</TableCell>
 						<TableCell>
-							{formatNumberInMillions(item.maxAmount)}
+							{formatNumberInMillions(item.Balance)}
 						</TableCell>
-						<TableCell>{item.maturity}</TableCell>
+						<TableCell>{formatDateToDDMMYYYY(item.Maturity)}</TableCell>
 						<TableCell>
-							{item.interestRate.margin.toFixed(2) + "% + "}
+							{item.Margin.toFixed(2) + "% + "}
 							<Badge
 								appearance="filled"
 								shape="circular"
 								color="informative"
 								size="small"
 							>
-								{item.interestRate.base}
+								{item.Base}
 							</Badge>{" "}
 						</TableCell>
 					</TableRow>
 				))}
 			</TableBody>
-      {/* <tfoot>
+			{/* <tfoot>
       {columns.map((column) => (
 						<td></td>
 					))}

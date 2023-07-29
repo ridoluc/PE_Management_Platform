@@ -4,13 +4,13 @@
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	grid-template-rows: auto auto auto 1fr;
-	gap: 20px 20px;
+	gap: 25px 25px;
 	grid-auto-flow: row;
 	grid-template-areas:
     "Description ."
 		"Info Equity"
 		"Table Table"
-		". .";
+		". Documents";
 
   .Description{
 		justify-self: stretch;
@@ -30,5 +30,9 @@
 	.Info {
 		justify-self: stretch;
 		grid-area: Info;
+	}
+
+	.Documents{
+		grid-area: Documents;
 	}
 }
