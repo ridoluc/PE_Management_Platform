@@ -11,6 +11,7 @@ dist
 lib
 release
 solution
+sharepoint
 temp
 *.sppkg
 .heft

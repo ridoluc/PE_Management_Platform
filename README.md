@@ -6,11 +6,9 @@
 This software is a proof of concept for a management platform for private equity projects, funds or portfolios. The software serves as a comprehensive database UI, streamlining the organization, updating, and secure the project's data. It offers an easy access and organisation of documents. Automates certain data analysis workflows. 
 One of the key advantages is its integration with SharePoint websites and Microsoft Office Teams, eliminating the need for complex server setups and costly databases.
 
-
-
 **Table of Contents:**
 - [Features](#features)
-- [Usage](#usage)
+- [Images](#images)
 - [Contributing](#contributing)
 - [License](#license)
 - [Disclaimer](#disclaimer)
@@ -21,6 +19,12 @@ One of the key advantages is its integration with SharePoint websites and Micros
 - :heavy_check_mark: **Seamless Document Management** - Effortless access and seamless organization of documents. 
 - :heavy_check_mark: **Integration with SharePoint websites and Microsoft Office Teams** - No need for intricate server setups or expensive databases. Utilize the existing infrastructure of the Office Suite.
 - :heavy_check_mark: **Automated Data Analysis Workflows** - Automate certain data analysis orkflows. Leverage automation for reporting tasks and save time.
+
+## Images
+
+<img src="./assets/Fund.png" alt="Alt Text" width="500" >
+<img src="./assets/Fund2.png" alt="Alt Text" width="500" >
+<img src="./assets/Proj.png" alt="Alt Text" width="500">
 
 ## Tech Stack
 
