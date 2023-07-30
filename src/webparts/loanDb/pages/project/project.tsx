@@ -15,6 +15,7 @@ import ContainerCard from "../../components/ContainerCard/ContainerCard";
 import PropertyCard from "../../components/InfoCard/PropertyCard";
 
 import { Link as LinkRouter } from "react-router-dom";
+import DocumentList from "../../components/DocumentList/DocumentList";
 
 const useStyles = makeStyles({
 	WebPartContainer: {
@@ -35,6 +36,17 @@ const useStyles = makeStyles({
 		marginTop: "0px",
 	},
 });
+
+const DocsData = [
+	{
+		type: "Facility Agreement",
+		date: "02 Apr 23",
+		name: "Proj_facility_agreement.pdf",
+	},
+	{ type: "Investement Memo", date: "23 Mar 23", name: "IM_final.pdf" },
+	{ type: "DD Report", date: "10 Feb 23", name: "DD_proj_feb23.pdf" },
+	{ type: "Report", date: "03 Jun 23", name: "Report_Q1-2023.pdf" },
+];
 
 const loanInfoData = {
 	descr: [
@@ -87,6 +99,15 @@ const ProjectPage = () => {
 								<PropertyCard lines={loanInfoData.collateral} />
 							</div>
 						</div>
+					</ContainerCard>
+				</div>
+				<div className={ProjectStyle.Documents}>
+				<ContainerCard name="Documents">
+						<DocumentList lines={DocsData} />
+					</ContainerCard>
+				</div>
+				<div className={ProjectStyle.Capital}>
+				<ContainerCard name="Capital Movements">
 					</ContainerCard>
 				</div>
 			</div>

@@ -1,73 +1,50 @@
-# sp-test-1
+# PE Management Platform
+![version](https://img.shields.io/badge/version-0.1.0-green.svg)
 
 ## Summary
 
-Short summary on functionality and used technologies.
+This software is a proof of concept for a management platform for private equity projects, funds or portfolios. The software serves as a comprehensive database UI, streamlining the organization, updating, and secure the project's data. It offers an easy access and organisation of documents. Automates certain data analysis workflows. 
+One of the key advantages is its integration with SharePoint websites and Microsoft Office Teams, eliminating the need for complex server setups and costly databases.
 
-[picture of the solution in action, if possible]
 
-## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.17.4-green.svg)
+**Table of Contents:**
+- [Features](#features)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Disclaimer](#disclaimer)
 
-## Applies to
+## Features
 
-- [SharePoint Framework](https://aka.ms/spfx)
-- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+- :heavy_check_mark: **Efficient Data Management** -  Streamlined and securely stored project data. Eliminate error-prone "Excel databases" by leveraging a robust relational database with an intuitive and user-friendly interface.
+- :heavy_check_mark: **Seamless Document Management** - Effortless access and seamless organization of documents. 
+- :heavy_check_mark: **Integration with SharePoint websites and Microsoft Office Teams** - No need for intricate server setups or expensive databases. Utilize the existing infrastructure of the Office Suite.
+- :heavy_check_mark: **Automated Data Analysis Workflows** - Automate certain data analysis orkflows. Leverage automation for reporting tasks and save time.
 
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
+## Tech Stack
 
-## Prerequisites
+Built with:
 
-> Any special pre-requisites?
+| Name       | Version |
+|------------|-----|
+| [React](https://reactjs.org/)        | ![version](https://img.shields.io/badge/version-17.0.1-green.svg)  |
+| [Node.js](https://nodejs.org/)       |  ![version](https://img.shields.io/badge/version-17.0.0-green.svg) |
+| [SharePoint Framework (SPFx)](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview?WT.mc_id=m365-15744-cxa)       |  ![version](https://img.shields.io/badge/version-1.17.4-green.svg) |
+| [Fluent UI Components](https://react.fluentui.dev/)       |  ![version](https://img.shields.io/badge/version-9.26.0-green.svg) |
 
-## Solution
 
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+## Installation and Usage
 
-## Version history
+1. Follow Microsoft [guide](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant) for setting up Microsoft 365 Tenant 
+1. Modify the `initial page` property in *./config/serve.json*
+1. Start the local web server to preview the web part by running `gulp serve`
 
-| Version | Date             | Comments        |
-| ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
+
+
+## License
+This code is provided under the **GPL-3.0 license**.
 
 ## Disclaimer
 
 **THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
-
-## Minimal Path to Awesome
-
-- Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
-
-> Include any additional steps as needed.
-
-## Features
-
-Description of the extension that expands upon high-level summary above.
-
-This extension illustrates the following concepts:
-
-- topic 1
-- topic 2
-- topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
-
-## References
-
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
